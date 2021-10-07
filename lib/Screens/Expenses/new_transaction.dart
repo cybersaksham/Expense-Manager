@@ -96,7 +96,7 @@ class _NewTransactionState extends State<NewTransaction> {
           top: 10,
           left: 10,
           right: 10,
-          bottom: 70,
+          bottom: 70 + MediaQuery.of(context).viewInsets.bottom,
         ),
         child: Form(
           key: _formKey,
