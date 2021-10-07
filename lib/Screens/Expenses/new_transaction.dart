@@ -48,7 +48,6 @@ class _NewTransactionState extends State<NewTransaction> {
       if (pickedDate == null) {
         return;
       }
-      print("HI");
       setState(() {
         _isDateSelected = true;
         _pickedDate = pickedDate;
@@ -65,7 +64,9 @@ class _NewTransactionState extends State<NewTransaction> {
       });
       final FirebaseUser user = await FirebaseAuth.instance.currentUser();
       String year = (_date.trim()).substring(8);
-      int month = _pickedDate.month;
+      String month = _pickedDate.month < 10
+          ? "0${_pickedDate.month}"
+          : "${_pickedDate.month}";
       String day = (_date.trim()).substring(4, 6);
       String time = "$year $month $day ${Timestamp.now()}";
       await Firestore.instance

@@ -273,7 +273,7 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
                             ? Center(
                                 child: Text(
                                   "No transaction available",
-                                  style: Theme.of(context).textTheme.title,
+                                  style: Theme.of(context).textTheme.headline6,
                                 ),
                               )
                             : Column(
@@ -283,8 +283,9 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
                                     child: ListTile(
                                       leading: Text(
                                         "Total",
-                                        style:
-                                            Theme.of(context).textTheme.title,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline6,
                                       ),
                                       trailing: CircleAvatar(
                                         radius: 25,
@@ -389,7 +390,8 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
                                                       ['title'],
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .title,
+                                                      .headline6
+                                                      .copyWith(fontSize: 17),
                                                 ),
                                                 subtitle: Text(
                                                   _selectedTransactions[i]
